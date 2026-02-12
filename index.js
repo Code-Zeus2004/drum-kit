@@ -4,8 +4,18 @@ for(var i = 0; i < numberOfDrumButtons; i++){
    
  //console.log(this.innerHTML); gets the inner html of the button that was clicked
  
+
+
+
  var buttonInnerHTML = this.innerHTML;
- switch(buttonInnerHTML){
+  makeSound(buttonInnerHTML);
+
+  });
+  document.addEventListener("keypress", function(event){
+    makeSound(event.key);   });
+
+ function makeSound(key){
+   switch(key){
   case "w":
     var audio = new Audio('sounds/tom-1.mp3');
  audio.play();
@@ -42,5 +52,6 @@ for(var i = 0; i < numberOfDrumButtons; i++){
 
  }
 
-  });
+ }
+
 }
